@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { SourceMapDevToolPlugin } = require("webpack");
 
 module.exports = {
   entry: "./src/index.js",
@@ -10,10 +11,17 @@ module.exports = {
   devServer: {
     port: 3000,
     open: true,
+    hot: true,
+    client: {
+      logging: "none",
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./index.html", 
+      template: "./index.html",
+    }),
+    new SourceMapDevToolPlugin({
+      filename: "[file].map"
     }),
   ],
   module: {
@@ -27,6 +35,15 @@ module.exports = {
             presets: ["@babel/preset-env"],
           },
         },
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.m?js$/,
+        enforce: 'pre',
+        use: ['source-map-loader'],
       },
     ],
   },

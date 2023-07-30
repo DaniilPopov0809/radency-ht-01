@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ванильный JS с Webpack</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ToDo List</title>
+  </head>
+  <body>
     <h1>To-Do List</h1>
-    <input type="text" id="taskInput" placeholder="Введите задачу">
-    <button id="addButton">Добавить</button>
-    <ul id="taskList"></ul>
-    <script src="dist/main.js"></script>
-</body>
+    <table class="table">
+      <thead>
+        <tr class="table-primary">
+          <th scope="col">Name</th>
+          <th scope="col">Created</th>
+          <th scope="col">Category</th>
+          <th scope="col">Content</th>
+          <th scope="col">Dates</th>
+          <th scope="col">Archives</th>
+        </tr>
+      </thead>
+      <tbody class="tableBody">
+      </tbody>
+    </table>
+  
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Create Note
+    </button>
+    
+  
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </body>
 </html>
