@@ -1,40 +1,27 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-import {todoListData} from "./data/todoListData"
-import renderTodoList from './renderFunctions/renderTodoList';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { todoListData } from "./data/todoListData";
+import { addToTodoList } from "./todoListFunction/addToTodoList";
+import { removeFromList } from "./todoListFunction/removeFromList";
+import { openEditModalWithData } from "./todoListFunction/openEditModalWithData";
+import {renderTodoList} from "./renderFunctions/renderTodoList";
 
-const tableBody = document.querySelector(".tableBody");
-console.log("🚀 ~ file: index.js:6 ~ tableBody:", tableBody)
-const addButton = document.querySelector(".addButton");
+
+const tableBody = document.querySelector(".table-body");
+const addNoteForm = document.querySelector("#add-note-form");
+
 
 renderTodoList(todoListData, tableBody);
 
+const onListenTableRow = (event) => {
+  if (event.target.name === "remove") {
+    removeFromList(todoListData, event.target.dataset);
+  }
+  if (event.target.name === "edit") {
+    openEditModalWithData(todoListData, event.target.dataset);
+  }
+};
 
-// const onListenEvent = (event) => {
-//   event
-// }
-
-// tableBody.addEventListener('click', onListenEvent);
-
-
-
-// removeButton.addEventListener("click", removeFromList);
-
-// const addToList = (event) => {
-//     console.log(event.target);
-//     console.log("I btn")
-// }
-
-// const listenEvent = (event) => {
-//     console.log("Work");
-//     console.log(event.target);
-//     console.log(event.currentTarget);
-//   }
-
-// addButton.addEventListener("click", addToList);
-
-// tableBody.addEventListener("click", listenEvent);
-
-
-
+tableBody.addEventListener("click", onListenTableRow);
+addNoteForm.addEventListener("submit", addToTodoList);
 

@@ -1,1 +1,0 @@
-export const categotyList = ['Task', 'Random Thought', 'Idea'];

@@ -19,32 +19,95 @@
           <th scope="col">Archives</th>
         </tr>
       </thead>
-      <tbody class="tableBody">
+      <tbody class="table-body">
       </tbody>
     </table>
   
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
       Create Note
     </button>
     
   
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <h1 class="modal-title fs-5" id="addModalLabel">Create note</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+
+            <form id="add-note-form">
+              <div class="mb-3">
+                <label for="add-title-note" class="form-label">Name note</label>
+                <input type="text" class="form-control" id="add-title-note">
+              </div>
+              <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <select class="form-select" id="add-category">
+                  <option value="">Select...</option>
+                  <option value="task">Task</option>
+                  <option value="idea">Idea</option>
+                  <option value="thought">Random Thought</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="add-textare" class="form-label">Content</label>
+                <textarea  class="form-control" id="add-textarea" rows="3"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" class="form-control" id="add-date">
+              </div>
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="add note-button">Add note</button>
+            </form>
+
           </div>
         </div>
       </div>
     </div>
-  
+    
+
+   
+    
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="editModalLabel">Edit note</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+    
+            <form id="edit-note-form">
+              <div class="mb-3">
+                <label for="edit-title-note" class="form-label">Name note</label>
+                <input type="text" class="form-control" id="edit-title-note">
+              </div>
+              <div class="mb-3">
+                <label for="edit-category" class="form-label">Category</label>
+                <select class="form-select" id="edit-category">
+                  <option value="">Select...</option>
+                  <option value="Task">Task</option>
+                  <option value="Idea">Idea</option>
+                  <option value="Random Thought">Random Thought</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="edit-textarea" class="form-label">Content</label>
+                <textarea class="form-control" id="edit-textarea" rows="3"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="edit-date" class="form-label">Date</label>
+                <input type="date" class="form-control" id="edit-date">
+              </div>
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="edit-note-button">Save Changes</button>
+            </form>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>
