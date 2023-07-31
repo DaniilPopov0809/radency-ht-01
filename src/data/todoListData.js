@@ -6,6 +6,7 @@ export const todoListData = [
     category: "Task",
     content: "Tomatossdd, bread",
     dates: [],
+    archive: false,
   },
   {
     id: "vperTKBsSa_qi4pesmGLD",
@@ -14,6 +15,7 @@ export const todoListData = [
     category: "Task",
     content: "Learn startup",
     dates: ["3/05/2023"],
+    archive: false,
   },
   {
     id: "vperTKBsSa_qi4pesmMAC",
@@ -22,6 +24,7 @@ export const todoListData = [
     category: "Idea",
     content: "Implantmant",
     dates: ["3/05/2023", "5/05/2023"],
+    archive: false,
   },
   {
     id: "vperTKBsSa_qi4pesmOLX",
@@ -30,5 +33,6 @@ export const todoListData = [
     category: "Task",
     content: "Run, Push ups",
     dates: [],
+    archive: true,
   },
 ];

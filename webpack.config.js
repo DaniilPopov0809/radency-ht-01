@@ -13,6 +13,7 @@ module.exports = {
     port: 3000,
     static: path.join(__dirname, 'build'),
     open: true,
+    historyApiFallback: true,
     hot: true,
     client: {
       logging: "none",

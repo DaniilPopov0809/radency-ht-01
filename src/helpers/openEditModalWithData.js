@@ -1,6 +1,6 @@
 import { Modal } from "bootstrap";
-import { deFormateDate } from "../helpers/deFormateDate";
-import { editTodoList } from "./editTodoList";
+import { deFormateDate } from "./deFormateDate";
+import { editTodoList } from "../todoListFunction/editTodoList";
 
 export const openEditModalWithData = (data, { id }) => {
   const editModal = new Modal(document.querySelector("#editModal"));

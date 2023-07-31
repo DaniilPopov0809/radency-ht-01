@@ -1,4 +1,5 @@
 import { nanoid } from "nanoid";
+import Notiflix from "notiflix";
 import { renderAddToTodoList } from "../renderFunctions/renderAddToTodoList";
 import { todoListData } from "../data/todoListData";
 import { getCurrentDate } from "../helpers/getCurrentDate";
@@ -7,7 +8,7 @@ import { getDataToInfoTable } from "./getDataToInfoTable";
 
 export const addToTodoList = (event) => {
   event.preventDefault();
-
+  try {
   const title = document.querySelector("#add-title-note").value;
   const category = document.querySelector("#add-category").value;
   const content = document.querySelector("#add-textarea").value;
@@ -36,4 +37,8 @@ export const addToTodoList = (event) => {
   document.querySelector("#add-category").value = "";
   document.querySelector("#add-textarea").value = "";
   document.querySelector("#add-date").value = "";
+  Notiflix.Notify.success("Added successfully");
+} catch (error) {
+  Notiflix.Notify.failure(error.message);
+}
 };

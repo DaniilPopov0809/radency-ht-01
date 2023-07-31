@@ -1,4 +1,4 @@
-import { todoTableRowMarkup } from "../const/todoTableRowMarkup";
+import { todoTableRowMarkup } from "../markup/todoTableRowMarkup";
 
 export const renderAddToTodoList = (item) => {
   const tableBody = document.querySelector(".table-body");
