@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { SourceMapDevToolPlugin } = require("webpack");
 
+
 module.exports = {
   entry: "./src/index.js",
   output: {
@@ -27,6 +28,10 @@ module.exports = {
   ],
   module: {
     rules: [
+      {
+        test: /\.html$/,
+        use: ['html-loader'],
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,

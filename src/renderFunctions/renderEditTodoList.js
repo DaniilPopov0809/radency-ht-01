@@ -1,9 +1,6 @@
-import { tableRowMarkup } from "../const/tableRowMarkup";
+import { todoTableRowMarkup } from "../const/todoTableRowMarkup";
 
 export const renderEditTodoList = (data, id) => {
- 
   const editRow = document.querySelector(`[data-id="${id}"]`);
-  editRow.innerHTML = tableRowMarkup(data);
- 
-  
+  editRow.innerHTML = todoTableRowMarkup(data);
 };

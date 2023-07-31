@@ -1,6 +1,6 @@
 import { truncateString } from "../helpers/truncateString";
 
-export const tableRowMarkup = (item) =>
+export const todoTableRowMarkup = (item) =>
   `<tr class='table-row' data-id='${item.id}'>
 <td>${item.title}</td>
 <td>${item.created}</td>

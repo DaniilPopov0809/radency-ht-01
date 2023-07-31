@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>ToDo List</title>
   </head>
   <body>
@@ -23,10 +22,21 @@
       </tbody>
     </table>
   
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+    <button type="button" class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#addModal">
       Create Note
     </button>
     
+    <table class="table">
+      <thead>
+        <tr class="table-primary">
+          <th scope="col">Note Category</th>
+          <th scope="col">Active</th>
+          <th scope="col">Arhives</th>
+        </tr>
+      </thead>
+      <tbody class="table-info-body">
+      </tbody>
+    </table>
   
     <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -46,9 +56,9 @@
                 <label for="category" class="form-label">Category</label>
                 <select class="form-select" id="add-category">
                   <option value="">Select...</option>
-                  <option value="task">Task</option>
-                  <option value="idea">Idea</option>
-                  <option value="thought">Random Thought</option>
+                  <option value="Task">Task</option>
+                  <option value="Idea">Idea</option>
+                  <option value="Random Thought">Random Thought</option>
                 </select>
               </div>
               <div class="mb-3">
@@ -66,9 +76,6 @@
         </div>
       </div>
     </div>
-    
-
-   
     
     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
       <div class="modal-dialog">

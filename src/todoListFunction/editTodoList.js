@@ -1,5 +1,6 @@
 import { formatDate } from "../helpers/formatDate";
 import { renderEditTodoList } from "../renderFunctions/renderEditTodoList";
+import { getDataToInfoTable } from "./getDataToInfoTable";
 
 export function editTodoList(event, data, index, id) {
   event.preventDefault();
@@ -42,4 +43,5 @@ export function editTodoList(event, data, index, id) {
   }
 
   renderEditTodoList(data[index], id);
+  getDataToInfoTable(data);
 }
