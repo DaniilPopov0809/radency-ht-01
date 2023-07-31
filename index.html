@@ -6,7 +6,7 @@
     <title>ToDo List</title>
   <script defer src="main.js"></script></head>
   <body>
-    <h1>To-Do List</h1>
+    <h1 class="title text-center">ToDo List</h1>
     <table class="table">
       <thead>
         <tr class="table-primary">
@@ -15,7 +15,7 @@
           <th scope="col">Category</th>
           <th scope="col">Content</th>
           <th scope="col">Dates</th>
-          <th scope="col">Archives</th>
+          <th scope="col">Functions</th>
         </tr>
       </thead>
       <tbody class="table-body">
@@ -25,7 +25,14 @@
     <button type="button" class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#addModal">
       Create Note
     </button>
+    <button type="button" class="btn btn-primary mb-4" id="show-archive">
+      Show Archive
+    </button>
     
+    <button type="button" class="btn btn-primary mb-4" id="show-todo-list">
+      Show ToDo
+    </button>
+
     <table class="table">
       <thead>
         <tr class="table-primary">
@@ -115,6 +122,5 @@
         </div>
       </div>
     </div>
-
   </body>
 </html>
