@@ -11,13 +11,14 @@ export const todoTableRowMarkup = (item) =>
     <div>  
         <button type="button" class="btn btn-primary" name='edit' data-id="${
           item.id
-        }">Edit</button>
+        }"><ion-icon name="create-outline" style="pointer-events: none"></ion-icon></button>
         <button type="button" class="btn btn-primary" name='archive'data-id="${
           item.id
-        }">Archive</button>
+        }"><ion-icon name="archive-outline" style="pointer-events: none"></ion-icon></button>
         <button type="button" class="btn btn-primary" name='remove' data-id="${
           item.id
-        }">Remove</button>
+        }"><ion-icon name="trash-outline" style="pointer-events: none"></ion-icon>
+        </button>
     <div>
 </td>
 </tr>`;

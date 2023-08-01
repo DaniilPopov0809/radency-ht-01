@@ -7,10 +7,10 @@
   </head>
   <body class="d-flex flex-column min-vh-100">
     <header>
-      <nav class="navbar  bg-success">
+      <nav class="navbar bg-success">
         <div class="container">
           <a class="navbar-brand d-flex align-items-center" href="/">
-            <img src="/src/img/logo.svg" alt="logo" width="30" >
+            <img src="/src/img/logo.svg" alt="logo" width="30" />
             <p class="mb-0 ms-2 text-light">ToDo</p>
           </a>
         </div>
@@ -33,12 +33,7 @@
       </table>
 
       <div>
-        <button
-          type="button"
-          class="btn btn-primary mb-4"
-          data-bs-toggle="modal"
-          data-bs-target="#addModal"
-        >
+        <button type="button" class="btn btn-primary mb-4" id="create-note">
           Create Note
         </button>
         <button type="button" class="btn btn-primary mb-4" id="show-archive">
@@ -85,11 +80,16 @@
                   <label for="add-title-note" class="form-label"
                     >Name note</label
                   >
-                  <input type="text" class="form-control" id="add-title-note" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="add-title-note"
+                    required
+                  />
                 </div>
                 <div class="mb-3">
                   <label for="category" class="form-label">Category</label>
-                  <select class="form-select" id="add-category">
+                  <select class="form-select" id="add-category" required>
                     <option value="">Select...</option>
                     <option value="Task">Task</option>
                     <option value="Idea">Idea</option>
@@ -107,11 +107,11 @@
                 <div class="mb-3">
                   <label for="date" class="form-label">Date</label>
                   <input type="date" class="form-control" id="add-date" />
+                  <p id="error-message-add-form" style="color: red"></p>
                 </div>
                 <button
                   type="submit"
                   class="btn btn-primary"
-                  data-bs-dismiss="modal"
                   id="add note-button"
                 >
                   Add note
@@ -150,6 +150,7 @@
                     type="text"
                     class="form-control"
                     id="edit-title-note"
+                    required
                   />
                 </div>
                 <div class="mb-3">
@@ -172,11 +173,11 @@
                 <div class="mb-3">
                   <label for="edit-date" class="form-label">Date</label>
                   <input type="date" class="form-control" id="edit-date" />
+                  <p id="error-message-edit-form" style="color: red"></p>
                 </div>
                 <button
                   type="submit"
                   class="btn btn-primary"
-                  data-bs-dismiss="modal"
                   id="edit-note-button"
                 >
                   Save Changes
@@ -189,11 +190,10 @@
     </main>
     <footer class="bg-success text-center text-light">
       <div class="container py-2">
+        <p class="mb-1">All rights reserved © 2023 by Daniil Popov</p>
         <p class="mb-1">
-          All rights reserved © 2023 by Daniil Popov
-        </p>
-        <p class="mb-1">
-         email: <a href="mailto:x6uhrox@gmail.com" class="text-decoration-none">
+          email:
+          <a href="mailto:x6uhrox@gmail.com" class="text-decoration-none">
             x6uhrox@gmail.com
           </a>
         </p>
@@ -207,5 +207,13 @@
         </p>
       </div>
     </footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>

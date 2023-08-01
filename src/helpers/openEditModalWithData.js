@@ -23,8 +23,11 @@ export const openEditModalWithData = (data, { id }) => {
   }
 
   function handleSubmit(event) {
-    editTodoList(event, data, index, id);
+    if (!editTodoList(event, data, index, id)) {
+      return; 
+    }
     editNoteForm.removeEventListener("submit", handleSubmit);
+    editModal.hide();
   }
 
   const editNoteForm = document.querySelector("#edit-note-form");

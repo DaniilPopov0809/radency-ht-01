@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { todoListData } from "./data/todoListData";
-import { addToTodoList } from "./todoListFunction/addToTodoList";
+import { openAddModal } from "./helpers/openAddModal";
 import { removeFromList } from "./todoListFunction/removeFromList";
 import { openEditModalWithData } from "./helpers/openEditModalWithData";
 import { renderTodoList } from "./renderFunctions/renderTodoList";
@@ -9,7 +9,7 @@ import { getDataToInfoTable } from "./todoListFunction/getDataToInfoTable";
 import { toggleToArchive } from "./todoListFunction/toggleToArchive";
 
 const tableBody = document.querySelector(".table-body");
-const addNoteForm = document.querySelector("#add-note-form");
+const createNote = document.querySelector("#create-note");
 const showArchive = document.querySelector("#show-archive");
 const showTodo = document.querySelector("#show-todo-list");
 
@@ -28,7 +28,7 @@ const onListenTableRow = (event) => {
 };
 
 tableBody.addEventListener("click", onListenTableRow);
-addNoteForm.addEventListener("submit", addToTodoList);
+createNote.addEventListener("click", openAddModal);
 showArchive.addEventListener("click", () =>
   renderTodoList(todoListData, tableBody, true)
 );
