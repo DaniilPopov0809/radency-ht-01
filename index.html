@@ -6,121 +6,208 @@
     <title>ToDo List</title>
   </head>
   <body>
-    <h1 class="title text-center">ToDo List</h1>
-    <table class="table">
-      <thead>
-        <tr class="table-primary">
-          <th scope="col">Name</th>
-          <th scope="col">Created</th>
-          <th scope="col">Category</th>
-          <th scope="col">Content</th>
-          <th scope="col">Dates</th>
-          <th scope="col">Functions</th>
-        </tr>
-      </thead>
-      <tbody class="table-body">
-      </tbody>
-    </table>
-  
-    <button type="button" class="btn btn-primary mb-4" data-bs-toggle="modal" data-bs-target="#addModal">
-      Create Note
-    </button>
-    <button type="button" class="btn btn-primary mb-4" id="show-archive">
-      Show Archive
-    </button>
-    
-    <button type="button" class="btn btn-primary mb-4" id="show-todo-list">
-      Show ToDo
-    </button>
+    <header>
+      <nav class="navbar  bg-success">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="/src/img/logo.svg" alt="logo" width="30" >
+            <p class="mb-0 ms-2 text-light">ToDo</p>
+          </a>
+        </div>
+      </nav>
+    </header>
+    <main class="container py-3 d-flex flex-column min-vh-100">
+      <div class="flex-grow-1">
+      <h1 class="title text-center">ToDo List</h1>
+      <table class="table mb-4">
+        <thead>
+          <tr class="table-primary">
+            <th scope="col">Name</th>
+            <th scope="col">Created</th>
+            <th scope="col">Category</th>
+            <th scope="col">Content</th>
+            <th scope="col">Dates</th>
+            <th scope="col">Functions</th>
+          </tr>
+        </thead>
+        <tbody class="table-body"></tbody>
+      </table>
 
-    <table class="table">
-      <thead>
-        <tr class="table-primary">
-          <th scope="col">Note Category</th>
-          <th scope="col">Active</th>
-          <th scope="col">Arhives</th>
-        </tr>
-      </thead>
-      <tbody class="table-info-body">
-      </tbody>
-    </table>
-  
-    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="addModalLabel">Create note</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div>
+        <button
+          type="button"
+          class="btn btn-primary mb-4"
+          data-bs-toggle="modal"
+          data-bs-target="#addModal"
+        >
+          Create Note
+        </button>
+        <button type="button" class="btn btn-primary mb-4" id="show-archive">
+          Show Archive
+        </button>
+
+        <button type="button" class="btn btn-primary mb-4" id="show-todo-list">
+          Show ToDo
+        </button>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr class="table-primary">
+            <th scope="col">Note Category</th>
+            <th scope="col">Active</th>
+            <th scope="col">Arhives</th>
+          </tr>
+        </thead>
+        <tbody class="table-info-body"></tbody>
+      </table>
+
+      <div
+        class="modal fade"
+        id="addModal"
+        tabindex="-1"
+        aria-labelledby="addModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="addModalLabel">Create note</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="add-note-form">
+                <div class="mb-3">
+                  <label for="add-title-note" class="form-label"
+                    >Name note</label
+                  >
+                  <input type="text" class="form-control" id="add-title-note" />
+                </div>
+                <div class="mb-3">
+                  <label for="category" class="form-label">Category</label>
+                  <select class="form-select" id="add-category">
+                    <option value="">Select...</option>
+                    <option value="Task">Task</option>
+                    <option value="Idea">Idea</option>
+                    <option value="Random Thought">Random Thought</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="add-textare" class="form-label">Content</label>
+                  <textarea
+                    class="form-control"
+                    id="add-textarea"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="date" class="form-label">Date</label>
+                  <input type="date" class="form-control" id="add-date" />
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  data-bs-dismiss="modal"
+                  id="add note-button"
+                >
+                  Add note
+                </button>
+              </form>
+            </div>
           </div>
-          <div class="modal-body">
+        </div>
+      </div>
 
-            <form id="add-note-form">
-              <div class="mb-3">
-                <label for="add-title-note" class="form-label">Name note</label>
-                <input type="text" class="form-control" id="add-title-note">
-              </div>
-              <div class="mb-3">
-                <label for="category" class="form-label">Category</label>
-                <select class="form-select" id="add-category">
-                  <option value="">Select...</option>
-                  <option value="Task">Task</option>
-                  <option value="Idea">Idea</option>
-                  <option value="Random Thought">Random Thought</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="add-textare" class="form-label">Content</label>
-                <textarea  class="form-control" id="add-textarea" rows="3"></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="date" class="form-label">Date</label>
-                <input type="date" class="form-control" id="add-date">
-              </div>
-              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="add note-button">Add note</button>
-            </form>
-
+      <div
+        class="modal fade"
+        id="editModal"
+        tabindex="-1"
+        aria-labelledby="editModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="editModalLabel">Edit note</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="edit-note-form">
+                <div class="mb-3">
+                  <label for="edit-title-note" class="form-label"
+                    >Name note</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="edit-title-note"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="edit-category" class="form-label">Category</label>
+                  <select class="form-select" id="edit-category">
+                    <option value="">Select...</option>
+                    <option value="Task">Task</option>
+                    <option value="Idea">Idea</option>
+                    <option value="Random Thought">Random Thought</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="edit-textarea" class="form-label">Content</label>
+                  <textarea
+                    class="form-control"
+                    id="edit-textarea"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="edit-date" class="form-label">Date</label>
+                  <input type="date" class="form-control" id="edit-date" />
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  data-bs-dismiss="modal"
+                  id="edit-note-button"
+                >
+                  Save Changes
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    
-    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="editModalLabel">Edit note</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-    
-            <form id="edit-note-form">
-              <div class="mb-3">
-                <label for="edit-title-note" class="form-label">Name note</label>
-                <input type="text" class="form-control" id="edit-title-note">
-              </div>
-              <div class="mb-3">
-                <label for="edit-category" class="form-label">Category</label>
-                <select class="form-select" id="edit-category">
-                  <option value="">Select...</option>
-                  <option value="Task">Task</option>
-                  <option value="Idea">Idea</option>
-                  <option value="Random Thought">Random Thought</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="edit-textarea" class="form-label">Content</label>
-                <textarea class="form-control" id="edit-textarea" rows="3"></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="edit-date" class="form-label">Date</label>
-                <input type="date" class="form-control" id="edit-date">
-              </div>
-              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="edit-note-button">Save Changes</button>
-            </form>
-    
-          </div>
-        </div>
+    </main>
+    <footer class="bg-success text-center text-light">
+      <div class="container py-2">
+        <p class="mb-1">
+          All rights reserved © 2023 by Daniil Popov
+        </p>
+        <p class="mb-1">
+         email: <a href="mailto:x6uhrox@gmail.com" class="text-decoration-none">
+            x6uhrox@gmail.com
+          </a>
+        </p>
+        <p class="m-0">
+          <a
+            href="https://github.com/DaniilPopov0809/radency-ht-01"
+            class="text-decoration-none d-block d-flex align-items-center justify-content-center"
+          >
+            GitHub
+          </a>
+        </p>
       </div>
-    </div>
+    </footer>
   </body>
 </html>
