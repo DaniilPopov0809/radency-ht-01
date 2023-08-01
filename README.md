@@ -22,7 +22,7 @@ The "To-Do List" web app is a convenient tool for organizing tasks, ideas, and v
 ![Webpack](https://img.shields.io/badge/Webpack-090000?style=for-the-badge)
 
 ## Link to web app:
-[Link to web app](https://my-wallet-app-black.vercel.app/)
+[Link to web app](https://daniilpopov0809.github.io/radency-ht-01/)
 
 ## Test task:
-[Test task](https://docs.google.com/document/d/19J4foINdh6IiC766zgXiU9EAIxNMc75fqWbqEcP_4Ms/edit?usp=sharing)
+[Test task](https://drive.google.com/file/d/1Q5mCHsMI14bH4oT4ngE39CYfnOoct-N1/view?usp=sharing)
