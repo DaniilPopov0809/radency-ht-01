@@ -9,16 +9,16 @@ export const openAddModal = () => {
   document.querySelector("#add-textarea").value = "";
   document.querySelector("#add-date").value = "";
 
-   function handleSubmit(event) {
-    
+  function handleSubmit(event) {
     if (!addToTodoList(event)) {
       return;
     }
-    addModal.hide();
     addNoteForm.removeEventListener("submit", handleSubmit);
+    addModal.hide();
   }
 
   const addNoteForm = document.querySelector("#add-note-form");
-  addNoteForm.addEventListener("submit", (event) => handleSubmit(event));
+
+  addNoteForm.addEventListener("submit", handleSubmit);
   addModal.show();
 };
