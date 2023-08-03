@@ -16,13 +16,15 @@ export const openEditModalWithData = (data, { id }) => {
   document.querySelector("#edit-title-note").value = title;
   document.querySelector("#edit-category").value = category;
   document.querySelector("#edit-textarea").value = content;
-  document.querySelector("#edit-date").value = deFormateDate(
-    dates[dates.length - 1]
-  );
+  if (dates.length !== 0) {
+    document.querySelector("#edit-date").value = deFormateDate(
+      dates[dates.length - 1]
+    );
+  }
 
   function handleSubmit(event) {
     if (!editTodoList(event, data, index, id)) {
-      return;
+      return; 
     }
     editNoteForm.removeEventListener("submit", handleSubmit);
     editModal.hide();
